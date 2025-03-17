@@ -4,9 +4,9 @@ import mysql.connector
 
 csv_filename = "students.csv"
 data = [
-    [1, "Alice", 85],
-    [2, "Bob", 90],
-    [3, "Charlie", 78]
+    [1, "Ram", 85],
+    [2, "XYZ", 90],
+    [3, "Freddy", 78]
 ]
 
 with open(csv_filename, mode="w", newline="") as file:
@@ -40,8 +40,8 @@ with open(csv_filename, mode="r") as file:
 conn.commit()
 
 additional_records = [
-    (5, "Emma", 92),
-    (6, "Frank", 80)
+    (5, "Sam", 92),
+    (6, "Abc", 80)
 ]
 cursor.executemany("INSERT INTO students (id, name, marks) VALUES (%s, %s, %s)", additional_records)
 conn.commit()
